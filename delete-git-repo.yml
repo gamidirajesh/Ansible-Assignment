@@ -1,0 +1,27 @@
+--------------------------------NGINX Install Using Client Local Nginx Folder--------------------------
+---
+  - name: Play for Deleting git repo on clients
+    hosts: clients
+    gather_facts: no
+    serial: 1 #Executes the playbook one host at a time.
+    tasks:
+       - name: Delete Git Repo
+         shell: rm -rf /tmp/dockertest1 && rm -rf /var/www/html/style.css && rm -rf /var/www/html/index.nginx-debian.html && rm -rf /var/www/html/scorekeeper.js
+         #shell: rm -rf /var/www/html/style.css
+         tags:
+           - delete
+
+       - name: Installing Tools
+         apt:
+          name: "{{ item }}"
+          state: present
+         with_items:
+         - git
+         - jq
+         - wget
+         - curl
+    tags:
+     - tools
+
+
+     

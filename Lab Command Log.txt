@@ -1,0 +1,110 @@
+root@Ansible-Controller:~# history
+    1  ifconfig
+    2  apt install net-tools
+    3  apt install openssh-server
+    4  ifconfig
+    5  apt install openssh-server
+    6  nano /etc/hostname
+    7  clear
+    8  nano /etc/hosts
+    9  reboot
+   10  ifconfig
+   11  sudo apt update
+   12  sudo apt install software-properties-common
+   13  sudo add-apt-repository --yes --update ppa:ansible/ansible
+   14  sudo apt install ansible
+   15  ansibe --version
+   16  ansible version
+   17  ansible --version
+   18  ssh-keygen
+   19  ls ./ssh/id_rsa.pub
+   20  ls root/ssh/id_rsa.pub
+   21  ls /root/ssh/id_rsa.pub
+   22  ls /root/ssh/
+   23  ls /root/.ssh/
+   24  cat /root/.ssh/id_rsa.pub
+   25  cd /root/ssh/
+   26  cd /root/.ssh/
+   27  ls
+   28  ll
+   29  mkdir authorized_keys
+   30  ll
+   31  rm authorized_keys/
+   32  rm -f authorized_keys/
+   33  rm -rf authorized_keys/
+   34  ll
+   35  touch authorized_keys
+   36  ll
+   37  cd ..
+   38  cd ~
+   39  cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+   40  cat .ssh/id_rsa.pub
+   41  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBXKtT+KRTlUEMXT0D4h/a74qx3rX64LiTPowW0IEnGrK8h8SjC+Ea/6CeHpOGHWmv6NUd45CkFCrTAnB5KH5uhpu0nbYukwG7Y7Sov0WaOLypQmZ9mU+bRNHqD0hi+SwX5l0gNTlnQ6J25VbJCDc5IUvcUME4TW9FSeLfLjPHKYrmy5LXO30DNn+ZEOBO4Q7T7N+6bole47fJwszxOFUZ/uYbYZSv76H/FDSPj6JMctl8ecrX8r6zG5+fBF6x6z/zlBjx7FEDA3AVHdxjXaey5WHjQ72bJ3Qvr7/TtpPb9O+FX4Yce+YCm2vqNWI893KiOYD/gc+UgH+8YnD+POY3P9YXV40XjeQpJxGo5rZ4huJAEumFA3TueEYQPFpbsZ55thSKfjVQs+6FKMyh7bcZoMWCuxwHtpBUMVxTvyfnkFLVAc08DeOTNieKoupfrb8fUY/DkRle56tmOxQXxvFsgE3JIVAqkoHR3gg1irBF2BUqb7uDc4w85Parhq9iZ8U= root@Ansible-Controller
+   42  ssh -i 192.168.29.135
+   43  ssh -i ubuntu@192.168.29.135
+   44  ssh -j ubuntu@192.168.29.135
+   45  clear
+   46  cat /etc/ansible/hosts
+   47  nano /etc/ansible/hosts
+   48  ansible -i hosts all -m ping
+   49  nano /etc/ansible/hosts
+   50  nano hosts_ansible
+   51  ansible -i hosts_ansible all -m ping
+   52  ping 192.168.29.135
+   53  nano hosts_ansible
+   54  ping AnsibleNode1
+   55  nano hosts_ansible
+   56  ansible -i hosts_ansible all -m ping
+   57  ansible -i hosts_ansible all -m free
+   58  ansible -i hosts_ansible all -a free
+   59  ansible -i hosts_ansible all -a 'df -h'
+   60  ll
+   61  nano hosts_ansible
+   62  ansible -i hosts_ansible clients -a 'df -h'
+   63  ansible -i hosts_ansible clients -a free
+   64  poweroff
+   65  sudo apt update
+   66  sudo apt install software-properties-common
+   67  reboot
+   68  clear
+   69  nano /etc/default/grub
+   70  sudo update-grub
+   71  sudo apt purge plymouth
+   72  sudo apt autoremove
+   73  sudo rm -rf /usr/share/plymouth
+   74  reboot
+   75  clear
+   76  sudo apt install software-properties-common
+   77  sudo add-apt-repository --yes --update ppa:ansible/ansible
+   78  sudo apt install ansible
+   79  ll
+   80  ansible -i hosts_ansible clients -a 'df -h'
+   81  cat hosts_ansible
+   82  ansible -i hosts_ansible all -a 'df -h'
+   83  poweroff
+   84  cat hosts_ansible
+   85  ansible -i hosts_ansible all -a 'df -h'
+   86  ansible -i hosts_ansible all -a free
+   87  nano nginx.yml
+   88  ansible-playbook -i hosts_ansible nginx.yml --syntax-check
+   89  nano nginx.yml
+   90  ansible-playbook -i hosts_ansible nginx.yml --syntax-check
+   91  ansible-playbook -i hosts_ansible nginx.yml --check
+   92  cat hosts_ansible
+   93  ansible-playbook -i hosts_ansible nginx.yml --vv
+   94  ansible-playbook -i hosts_ansible nginx.yml -vv
+   95  cat hosts_ansible
+   96  nano nginx.yml
+   97  ansible-playbook -i hosts_ansible nginx.yml -vv
+   98  clear
+   99  cd /tmp/
+  100  wget https://github.com/gamidirajesh/dockertest1.git
+  101  ls
+  102  ll
+  103  git clone https://github.com/gamidirajesh/dockertest1.git
+  104  apt install git
+  105  clear
+  106  ll
+  107  cat hosts_ansible
+  108  clear
+  109  cat hosts_ansible

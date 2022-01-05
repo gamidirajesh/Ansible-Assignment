@@ -1,0 +1,94 @@
+-------------------------------Install Any Linux Flavour----------
+Lab can be configured in any cloud or Oracle Virtual Box
+
+One Ansible Controller
+Two Client Machines
+-------------------------------Installation Ansible Controller---------------------
+1.Set the hostname.( Reboot required )
+Example:
+#sudo hostname [NEW_HOSTNAME]
+
+2.Generate SSH key
+#ssh-keygen
+
+3.copy pub key and add to authorized keys
+#cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+ 
+4.Install ansible
+https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-specific-operating-systems.
+
+5.Create host file in controller
+#nano hosts_ansible
+sample host file shared in Github
+
+-------------------------Install Client Machines-----------------
+1.launch client machines.
+
+2.Set the hostname.( Reboot required )
+
+3.Copy pub key from Ansible Controller and add in client machines under authorized keys.
+
+4.Add client machines in host file in controller.
+
+5.Now ping client machines from Ansible Controller
+
+#ansible -i hosts_ansible all -m ping
+
+We need to disable that in /etc/ansible/ansible.cfg.
+Go to the above file and make it as host_key_checking = False 
+
+-------------------------------Ad-Hoc commands--------------------- 
+
+Create a user using the following command:
+#ansible -i hosts_ansible  clients -m user -a "user=testuser password=$1$DEbGy.Rc$jsamn44wm0aKhmc0TYmgv1"
+
+Confirm by running 
+#ansible -i hosts_ansible  clients -m command -a "cat /etc/passwd"
+
+to check hostnames
+ansible -i hosts_ansible all -m command -a hostname
+
+to check server uptime
+# ansible -i hosts_ansible all -m command -a uptime
+
+to check free space
+#ansible -i hosts_ansible all -m command -a free
+
+to check the amount of disk space available on the filesystem containing each file name argument
+#ansible -i hosts_ansible all -m command -a "df -h"
+
+to install docker
+#ansible -i hosts_ansible clients -m shell -a 'curl https://get.docker.com | bash' -vvv
+#ansible -i hosts_ansible  clients -m command -a "docker --version"
+#ansible -i hosts_ansible  clients -m command -a "docker ps"
+
+-------------------------------Ansible-Playbook-Commands---------------------
+
+Command to create playbook 
+#nano nginx.yml
+copy the template yml code and save
+
+ansible-playbook playbook.yml --list-hosts
+ansible-playbook playbook.yml --syntax-check
+ansible-playbook playbook.yml --syntax-check --verbose
+
+Basic-PLaybook-To-Install-Nginx
+run nginx.yml
+
+NGINX Install Using Controller Local Folder
+run nginx-with-localfolder.yml
+download source code manually from git repo
+
+NGINX Install Using Client Local Nginx Folder
+run nginx-with-gitrepo.yml
+
+TAGS for Plays & Installing Application
+run nginx-with-tags.yml
+#ansible-playbook -i hosts nginx3.yaml --tags tools && ansible-playbook -i hosts nginx3.yaml --tags nginx
+
+PLAYBOOK-WITH-TAGS-HANDLER
+run nginx-with-tags-handler.yml
+
+Playbook with Variables -- jinja templates
+run jinja-temp1
+
